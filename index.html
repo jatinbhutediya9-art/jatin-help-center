@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jatin Help Center</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 20px;
+      background: white;
+    }
+
+    .hero h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .whatsapp {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      padding: 14px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 35px 20px;
+      background: #111827;
+      color: white;
+      margin-top: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0b1120;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 27px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Jatin Help Center</h1>
+    <p>Apni problem bataiye, hum help karne ki koshish karenge.</p>
+  </header>
+
+  <section class="hero">
+    <h2>Need Help? Ask Your Question</h2>
+    <p>
+      Agar aapko kisi bhi kaam mein help chahiye,
+      apna question neeche submit karein.
+    </p>
+  </section>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h2>📝 Apna Question Pucho</h2>
+
+      <form onsubmit="sendQuestion(event)">
+
+        <label>Your Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Apna naam likhiye"
+          required
+        >
+
+        <label>Mobile Number</label>
+        <input
+          type="tel"
+          id="mobile"
+          placeholder="Mobile number"
+          required
+        >
+
+        <label>Help Category</label>
+        <select id="category">
+          <option>General Help</option>
+          <option>Website / Computer</option>
+          <option>Graphic Design</option>
+          <option>Online Work</option>
+          <option>Other</option>
+        </select>
+
+        <label>Your Question</label>
+        <textarea
+          id="question"
+          placeholder="Apni problem detail mein likhiye..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          🚀 Submit Question
+        </button>
+
+      </form>
+
+      <a
+        class="whatsapp"
+        href="https://wa.me/919004954489"
+        target="_blank"
+      >
+        💬 WhatsApp par Direct Help
+      </a>
+
+    </div>
+
+  </div>
+
+  <section class="contact">
+    <h2>Jatin Help Center</h2>
+    <p>Help chahiye? Humse contact karein.</p>
+  </section>
+
+  <footer>
+    © 2026 Jatin Help Center. All Rights Reserved.
+  </footer>
+
+  <script>
+
+    function sendQuestion(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const mobile = document.getElementById("mobile").value;
+      const category = document.getElementById("category").value;
+      const question = document.getElementById("question").value;
+
+      const message =
+        "Hello Jatin Help Center,%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Mobile: " + mobile + "%0A" +
+        "Category: " + category + "%0A" +
+        "Question: " + question;
+
+      window.open(
+        "https://wa.me/919004954489?text=" + message,
+        "_blank"
+      );
+    }
+
+  </script>
+
+</body>
+</html>
